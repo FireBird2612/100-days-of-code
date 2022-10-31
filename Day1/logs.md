@@ -1,1 +1,0 @@
-# This is where I will log my details for the coding challenge.
