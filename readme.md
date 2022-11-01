@@ -12,3 +12,7 @@ You can checkout this challenge [here](https://github.com/kallaway/100-days-of-c
 ---
 
 I'm a beginner and just learning to code. I'll be taking this #100DaysOfCodeChallenge in IoT, since I'm more interested in Embedded Software and IoT.
+
+---
+
+*Checkout **logs.md** file where I keep track of my progress.*
