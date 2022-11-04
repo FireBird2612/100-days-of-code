@@ -36,3 +36,12 @@ But at the end felt like not much progress was made.
 Decided to practice few string concepts such as strlen, strcmp, strstr, strcat, etc.
 
 ---
+
+# Day5 of Coding Challenge
+
+**Date:** 4 Nov 2022
+
+Played around with different algorithims today in how they work.
+While in the middle of coding I figured out a way I'd be scanning and storing UID of PICC in my RFID Project. So will definetly try that out tomorrow. Would have loved to code some more but my brain is not functioning anymore, being sleep deprived is not good, need that 7hrs of sleep.
+
+---
