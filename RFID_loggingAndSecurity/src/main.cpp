@@ -1,113 +1,73 @@
-#include <Arduino.h>
-#include <Wire.h>
+
 #include <SPI.h>
 #include <MFRC522.h>
-#include <LiquidCrystal_I2C.h>
+#include <Wire.h>
 
-constexpr uint8_t pushButton = D0;                  //pushButton pin no.
+#define RST_PIN D3
+#define SS_PIN D8
 
-LiquidCrystal_I2C lcd(0x27, 16, 2);                //addr, row, columns  
+MFRC522 mfrc522(SS_PIN, RST_PIN);  // Create MFRC522 instance
 
-MFRC522 mfrc522(D8, D3);                          // D8=CS, D3=RST on ESP8266
+byte bufferUIDStore[5];
+byte mastercard[5];
+byte uidStoreRoom[50][5]={ {135, 196, 119, 122, },
 
-MFRC522::MIFARE_Key key;
-
-int blockNum = 1;                                 //refere to datasheet for PICC.
-byte blockdata[16] = "Sanket_Gunjal";             //16 bytes since a has 16bytes that could be written to it
-
-byte uidstorage[5][10];
-byte counter;
-
-void setup(){
-  Serial.begin(9600);
-  SPI.begin();
-  mfrc522.PCD_Init();
-
-  for (byte i = 0; i < 6; i++){
-      key.keyByte[i] = 0xFF;
-  }
-
-  Serial.print("Oky this is done!");
-}
-
-
-void loop(){
-
-  if ( ! mfrc522.PICC_ReadCardSerial()){
-    return;
-  }
-
-  if ( ! mfrc522.PICC_IsNewCardPresent()){
-    return;
-  }
-
-  Serial.print("Success");
-
-  for (counter = 0; counter < 5; counter++)
-  {
-    Serial.print("Card UID:");
-
-    for (byte j = 0; j < 10; j++){
-    uidstorage[counter][j] = mfrc522.uid.uidByte[counter];
-    Serial.print("uidstorage[counter][j]");
-    delay(100);
-    }
-
-    Serial.print("\n");
-  }
-
-
-}
-
-/*
-String newCard = "";
-
-int convert = 0;
-
-byte cardstorage[50];
-int counter = 0;
+};
 
 void setup() {
-
-  Serial.begin(9600);
-  SPI.begin();
-  Wire.begin();
-  lcd.init();
-  mfrc522.PCD_Init();
-
-  lcd.clear();
-  lcd.backlight();
-  lcd.setCursor(0, 0);
-  lcd.print("The display is");
-  lcd.setCursor(0, 1);
-  lcd.print("working!");
+	Serial.begin(9600);		// Initialize serial communications with the PC
+	SPI.begin();
+	mfrc522.PCD_Init();		// Init MFRC522
 }
 
 void loop() {
+	// Reset the loop if no new card present on the sensor/reader. This saves the entire process when idle.
+	if ( ! mfrc522.PICC_IsNewCardPresent()) {
+		return;
+	}
 
+	// Select one of the cards
+	if ( ! mfrc522.PICC_ReadCardSerial()) {
+		return;
+	}
 
+	for (byte i = 0; i < mfrc522.uid.size; i++) {				//will store the UID in the temporary buffer
+		bufferUIDStore[i] = mfrc522.uid.uidByte[i];
+		Serial.print(bufferUIDStore[i]);
+		Serial.print(" ");
+	}
 
-  if ( ! mfrc522.PICC_IsNewCardPresent())                                         //will check if any tag is presesnt on PCD.
-  {
-    lcd.clear();
-    lcd.setCursor(4, 0);
-    lcd.print("Scan your");
-    lcd.setCursor(6, 1);
-    lcd.print("ID");
-    return;
-  }
+	Serial.print("\n");
 
-  if ( ! mfrc522.PICC_ReadCardSerial()){                                          //this is return true if PICC is readable
-    return;
-  }
+	if(bufferUIDStore[4] == 0){									//checking the last element of the buffer to decide if the last elements has anything written to it previously
+	bufferUIDStore[4] = random(99);
+	}
 
-  for (byte i = 0; i < mfrc522.uid.size; i++){
-    cardstorage[i] = mfrc522.uid.uidByte[i];
-    Serial.print(cardstorage[i]);
-  }
+	else{
+		Serial.print("occupied");
+	}
 
-  lcd.clear();
-  lcd.setCursor(0, 0);
-  delay(5000);
+	Serial.print("\n");
+	Serial.print(bufferUIDStore[4]);
+	Serial.print("\n");
+
+	delay(1000);
+
+	mfrc522.PICC_HaltA();
+
+	for (int i = 0; i < 5; i++){											//Compares the UID 
+		for (int j = 0 + 4; j < 5; j++){
+			if (bufferUIDStore[j] == uidStoreRoom[i][j])
+			{
+				Serial.print("User present in database\n");
+			}
+			else{
+				Serial.print("User not present in database\n");
+			}
+		}
+	}
 }
-*/
+
+void masterAccess(byte inputUID[4]){
+
+}
