@@ -45,3 +45,11 @@ Played around with different algorithims today in how they work.
 While in the middle of coding I figured out a way I'd be scanning and storing UID of PICC in my RFID Project. So will definetly try that out tomorrow. Would have loved to code some more but my brain is not functioning anymore, being sleep deprived is not good, need that 7hrs of sleep.
 
 ---
+
+# Day6 of coding challenge
+
+**Date:** 5th Nov 2022
+
+Back to doing RFID, figured out how I will be storing UID if someone new has to register. Still, plenty of things left to do. Did few experiments with rotary encoder as I will be controlling the visual part on lcd display with the encoder.
+
+---
