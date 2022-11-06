@@ -10,9 +10,10 @@ MFRC522 mfrc522(SS_PIN, RST_PIN);  // Create MFRC522 instance
 
 byte bufferUIDStore[5];
 byte mastercard[5];
-byte uidStoreRoom[50][5]={ {135, 196, 119, 122, },
+char uidStoreRoom[50][5]={ {135, 196, 119, 122, 132},
 
 };
+int idNumber = 1;
 
 void setup() {
 	Serial.begin(9600);		// Initialize serial communications with the PC
@@ -31,14 +32,18 @@ void loop() {
 		return;
 	}
 
+	Serial.print("\n\n\n\n");
+	Serial.print("-------------------------------\n");
+
 	for (byte i = 0; i < mfrc522.uid.size; i++) {				//will store the UID in the temporary buffer
-		bufferUIDStore[i] = mfrc522.uid.uidByte[i];
+		bufferUIDStore[i] = (mfrc522.uid.uidByte[i]);
 		Serial.print(bufferUIDStore[i]);
 		Serial.print(" ");
 	}
 
 	Serial.print("\n");
 
+	/*
 	if(bufferUIDStore[4] == 0){									//checking the last element of the buffer to decide if the last elements has anything written to it previously
 	bufferUIDStore[4] = random(99);
 	}
@@ -46,28 +51,36 @@ void loop() {
 	else{
 		Serial.print("occupied");
 	}
-
+	Serial.print(uidStoreRoom[0][4]);
 	Serial.print("\n");
-	Serial.print(bufferUIDStore[4]);
-	Serial.print("\n");
+	*/
 
 	delay(1000);
 
 	mfrc522.PICC_HaltA();
 
-	for (int i = 0; i < 5; i++){											//Compares the UID 
+	for (int i = 0; i < 49; i++){											//Compares the UID 
 		for (int j = 0 + 4; j < 5; j++){
 			if (bufferUIDStore[j] == uidStoreRoom[i][j])
 			{
-				Serial.print("User present in database\n");
+				Serial.print("User not present in database\n");
+				idNumber = i;
+				goto terminate;
 			}
 			else{
-				Serial.print("User not present in database\n");
+
 			}
+
 		}
 	}
+
+	terminate:
+	Serial.print("Succesfully exited from the loop since user is not present\nIdNumber is:");
+	Serial.print(idNumber);
+
+
 }
 
-void masterAccess(byte inputUID[4]){
-
+void masterAccess(byte inputUID[4])
+{
 }
