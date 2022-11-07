@@ -61,3 +61,13 @@ Back to doing RFID, figured out how I will be storing UID if someone new has to 
 I learned about how one can store long term data into an EEPROM, so the UIDs of PICC (RFID tags) needs to be stored permanently as the new tags get scanned but I'm a little confused in figuring out how much memory can be alloted for EEPROM emulation on ESP8266 12E (4MB flash). This also means that i need better memmory optimization as i will need as much storage space i can get. Now that I can scan the PICC and compare it with the stored UIDs, I also want to have a master RFID card which allows to store new scanned RFIDs or maybe I can pass the data to the server and store it there. Still lot of things to figure out and lots of things learn.
 
 ---
+
+# Day8 of coding challenge
+
+**Date:** 6th Nov 2022
+
+Making a function which will write personal data on the RFID tag, only master card will be able to access this function.
+Just reading through header files and main program of the library helps me understand so much about the programming language. I'm still a beginner but I feel like I'm understanding so much just by learning through doing simple projects.
+Unfortunately half way through, I'm not able to type any input in serial monitor. Will have to figure figure that out first.
+
+---
