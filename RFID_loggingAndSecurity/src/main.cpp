@@ -1,4 +1,5 @@
 
+/*
 #include <SPI.h>
 #include <MFRC522.h>
 #include <Wire.h>
@@ -21,6 +22,7 @@ void setup() {
 	mfrc522.PCD_Init();		// Init MFRC522
 }
 
+/*
 void loop() {
 	// Reset the loop if no new card present on the sensor/reader. This saves the entire process when idle.
 	if ( ! mfrc522.PICC_IsNewCardPresent()) {
@@ -55,6 +57,8 @@ void loop() {
 	Serial.print("\n");
 	*/
 
+	/*
+
 	delay(1000);
 
 	mfrc522.PICC_HaltA();
@@ -84,3 +88,30 @@ void loop() {
 void masterAccess(byte inputUID[4])
 {
 }
+
+
+
+
+void loop() {
+	// Reset the loop if no new card present on the sensor/reader. This saves the entire process when idle.
+	if ( ! mfrc522.PICC_IsNewCardPresent()) {
+		return;
+	}
+
+	// Select one of the cards
+	if ( ! mfrc522.PICC_ReadCardSerial()) {
+		return;
+	}
+
+	// Dump debug info about the card; PICC_HaltA() is automatically called
+	for (int i = 0; i < mfrc522.uid.size; i++){
+		Serial.print(mfrc522.uid.uidByte[i], HEX);
+		Serial.print("\n");
+		bufferUIDStore[i] = mfrc522.uid.uidByte[i];
+		Serial.print(bufferUIDStore[i], HEX);
+		Serial.print("\n");
+	}
+
+	mfrc522.PICC_HaltA();
+}
+*/
