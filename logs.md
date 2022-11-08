@@ -64,10 +64,19 @@ I learned about how one can store long term data into an EEPROM, so the UIDs of 
 
 # Day8 of coding challenge
 
-**Date:** 6th Nov 2022
+**Date:** 7th Nov 2022
 
 Making a function which will write personal data on the RFID tag, only master card will be able to access this function.
 Just reading through header files and main program of the library helps me understand so much about the programming language. I'm still a beginner but I feel like I'm understanding so much just by learning through doing simple projects.
 Unfortunately half way through, I'm not able to type any input in serial monitor. Will have to figure figure that out first.
+
+---
+
+# Day9 of coding challenge
+
+**Date:** 8th Nov 2022
+
+Finally, I can read from and write data to PICC (RFID). It took some time understanding how the library works and what each function in the library is meant to do, especially the logic behind the function. 
+Now, I have to integrate both the processes of reading and writing which will depend on few conditions.
 
 ---
