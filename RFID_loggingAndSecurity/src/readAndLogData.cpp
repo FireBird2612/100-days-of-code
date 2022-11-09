@@ -13,6 +13,7 @@ MFRC522::MIFARE_Key key;
 
 void readFromBlock1(int Block, byte dataFromBlock[]);
 void readFromBlock2(byte dataFromBlock2[]);
+void writeDataPICC(int block, byte writeBuffer[]);
 
 byte bufferUIDStore[4];
 byte mastercard[4];
@@ -25,6 +26,10 @@ int idNumber = 1;
 byte blockNo = 1, length = 18;
 byte dataFromBlock1[18];
 byte dataFromBlock2[18];
+
+// variable to write data to PICC
+byte datatoblock1[18];
+byte datatoblock2[18];
 
 MFRC522::StatusCode status;
 
@@ -66,15 +71,14 @@ void loop()
 
 	Serial.print("\n");
 
+	writeDataPICC(blockNo, dataFromBlock1);
+
 	readFromBlock1(blockNo, dataFromBlock1);
 	// print data to the serial monitor
 	Serial.print("Name: ");
 	for (int i = 0; i < 16; i++)
 	{
-		if (dataFromBlock1[i] != 0)
-		{
-			Serial.write(dataFromBlock1[i]);
-		}
+		Serial.write(dataFromBlock1[i]);
 	}
 	Serial.print(" ");
 
@@ -149,4 +153,40 @@ void readFromBlock2(byte dataFromBlock2[])
 	{
 		// Serial.print("Read Success!");
 	}
+}
+
+// Write data to the PICC
+void writeDataPICC(int block, byte writeBuffer[])
+{
+	int Block = 1;
+	// Ask data from serial port
+	Serial.setTimeout(20000);
+	Serial.println("Enter your first name, ending with #");
+	// read bytes until # character
+	length = Serial.readBytesUntil('#', (char *)writeBuffer, 30);
+
+	// authenticate with KeyA before proceeding to write the data
+	status = mfrc522.PCD_Authenticate(MFRC522::PICC_CMD_MF_AUTH_KEY_A, Block, &key, &(mfrc522.uid));
+	// check status
+	if (status != MFRC522::STATUS_OK)
+	{
+		Serial.print("Authentication Failed!");
+		Serial.println(mfrc522.GetStatusCodeName(status));
+		return;
+	}
+	else
+	{
+		Serial.print("Authentication Successful!");
+	}
+
+	// write data to block 1
+	status = mfrc522.MIFARE_Write(block, writeBuffer, length);
+	if (status != MFRC522::STATUS_OK)
+	{
+		Serial.print(F("MIFARE_Write() failed: "));
+		Serial.println(mfrc522.GetStatusCodeName(status));
+		return;
+	}
+	else
+		Serial.println(F("MIFARE_Write() success: "));
 }
