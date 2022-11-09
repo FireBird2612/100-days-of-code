@@ -80,3 +80,12 @@ Finally, I can read from and write data to PICC (RFID). It took some time unders
 Now, I have to integrate both the processes of reading and writing which will depend on few conditions.
 
 ---
+
+# Day10 of coding challenge
+
+**Date:** 9th Nov 2022
+
+Learned how to do debugging which helped me test my code in every possible scenario that plays out, espcecially when writing the PICC with new information.
+A little more tweaking and testing before proceeding further.
+
+---
