@@ -48,7 +48,7 @@ While in the middle of coding I figured out a way I'd be scanning and storing UI
 
 # Day6 of coding challenge
 
-**Date:** 5th Nov 2022
+**Date:** 5 Nov 2022
 
 Back to doing RFID, figured out how I will be storing UID if someone new has to register. Still, plenty of things left to do. Did few experiments with rotary encoder as I will be controlling the visual part on lcd display with the encoder.
 
@@ -56,7 +56,7 @@ Back to doing RFID, figured out how I will be storing UID if someone new has to 
 
 # Day7 of coding challenge
 
-**Date:** 6th Nov 2022
+**Date:** 6 Nov 2022
 
 I learned about how one can store long term data into an EEPROM, so the UIDs of PICC (RFID tags) needs to be stored permanently as the new tags get scanned but I'm a little confused in figuring out how much memory can be alloted for EEPROM emulation on ESP8266 12E (4MB flash). This also means that i need better memmory optimization as i will need as much storage space i can get. Now that I can scan the PICC and compare it with the stored UIDs, I also want to have a master RFID card which allows to store new scanned RFIDs or maybe I can pass the data to the server and store it there. Still lot of things to figure out and lots of things learn.
 
@@ -64,7 +64,7 @@ I learned about how one can store long term data into an EEPROM, so the UIDs of 
 
 # Day8 of coding challenge
 
-**Date:** 7th Nov 2022
+**Date:** 7 Nov 2022
 
 Making a function which will write personal data on the RFID tag, only master card will be able to access this function.
 Just reading through header files and main program of the library helps me understand so much about the programming language. I'm still a beginner but I feel like I'm understanding so much just by learning through doing simple projects.
@@ -74,7 +74,7 @@ Unfortunately half way through, I'm not able to type any input in serial monitor
 
 # Day9 of coding challenge
 
-**Date:** 8th Nov 2022
+**Date:** 8 Nov 2022
 
 Finally, I can read from and write data to PICC (RFID). It took some time understanding how the library works and what each function in the library is meant to do, especially the logic behind the function. 
 Now, I have to integrate both the processes of reading and writing which will depend on few conditions.
@@ -83,9 +83,17 @@ Now, I have to integrate both the processes of reading and writing which will de
 
 # Day10 of coding challenge
 
-**Date:** 9th Nov 2022
+**Date:** 9 Nov 2022
 
 Learned how to do debugging which helped me test my code in every possible scenario that plays out, espcecially when writing the PICC with new information.
 A little more tweaking and testing before proceeding further.
+
+---
+
+# Day11 of coding challenge
+
+**Date:** 10 Nov 2022
+
+printing the necessary elements to the lcd at various places. Also, I'm still not able to control the lcd with rotary encoder, since the adding of new PICC to the system will be done through the encoder. I will have to figure out a way to properly use encoder with the lcd. Also, played around the wifi functionality of ESP8266. 
 
 ---
