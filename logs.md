@@ -97,3 +97,15 @@ A little more tweaking and testing before proceeding further.
 printing the necessary elements to the lcd at various places. Also, I'm still not able to control the lcd with rotary encoder, since the adding of new PICC to the system will be done through the encoder. I will have to figure out a way to properly use encoder with the lcd. Also, played around the wifi functionality of ESP8266. 
 
 ---
+
+# Day12 of coding challenge
+
+**Date:** 11 Nov 2022
+
+Bad News: The MFRC522 module is not working because instead of providing 3.3V supply, I provided 5V supply. The module strictly needs 3.3V supply since it doesn't has any buck converter built into the module. So, I will have to wait for couple of days until the new module arrives. 
+So, instead I will be learning IoT communication protocol. 
+I started with MQTT (Message Queue Telemetry Transport) protocol which is a popular protocol when it comes to IoT devices.
+To see how it works and experiment with it, I have connected DHT11 sensor with NodeMCU. I will be publishing the data to the EMQX Cloud but unfortunately I'm not able to make a proper connection, so will have to figure that out first before proceeding any further.
+
+---
+
