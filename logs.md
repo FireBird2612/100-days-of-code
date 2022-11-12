@@ -109,3 +109,12 @@ To see how it works and experiment with it, I have connected DHT11 sensor with N
 
 ---
 
+# Day13 of coding challenge
+
+**Date:** 12 Nov 2022
+
+So I managed to get the DHT11 sensor online by using MQTT Protocol. I'll be connecting more sensors to ESP8266 and getting them online. I also want to try different brokers and get myself more familarise with protocol itself.
+The temperature and humidity that is being monitored is not the room temperature but instead the outside temperature as I've the setup near my window. I'd would like to see the variations in them through out the night.
+
+---
+
