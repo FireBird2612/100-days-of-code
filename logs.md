@@ -118,3 +118,12 @@ The temperature and humidity that is being monitored is not the room temperature
 
 ---
 
+# Day14 of coding challenge
+
+**Date:** 13 Nov 2022
+
+Practicing questions on arrays from GeeksForGeeks. I want to get myself more comfortable with C language especially the problem solving and logic that one implements. Anyways,
+I did not have my laptop today so was not able to continue from I left off yesterday.
+
+---
+
