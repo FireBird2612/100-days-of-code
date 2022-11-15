@@ -4,31 +4,32 @@
 #include <MFRC522.h>
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
+#include "masterUID.h"
 
 #define RST_PIN D3
 #define SS_PIN D8
+#define pushButton D2
 
-LiquidCrystal_I2C lcd(0x27, 16, 2); 			// set the LCD address to 0x27 for a 16 chars and 2 line display
+LiquidCrystal_I2C lcd(0x27, 16, 2); 																	// set the LCD address to 0x27 for a 16 chars and 2 line display
 
-MFRC522 mfrc522(SS_PIN, RST_PIN); // Create MFRC522 instance
+MFRC522 mfrc522(SS_PIN, RST_PIN);    																	//Create MFRC522 instance
 
-//key to access blocks of sectors
-MFRC522::MIFARE_Key key;		
+// key to access blocks of sectors
+MFRC522::MIFARE_Key key;
 
-//Function prototype for READING DATA FROM PICC
+// Function prototype for READING DATA FROM PICC
 void readFromBlock1(int Block, byte dataFromBlock[]);
 void readFromBlock2(int Block, byte dataFromBlock2[]);
-
-//Function prototype for WRITING DATA FROM PICC
+// Function prototype for WRITING DATA TO PICC
 void writeDataPICCFN(int block, byte writeBuffer[]);
 void writeDataPICCMN(int block, byte writeBuffer[]);
 
-//UID storage variables
-byte bufferUIDStore[4];
-byte mastercard[4];
-char uidStoreRoom[50][4] = {
-	{135, 196, 119, 122},
-};
+// UID storage variables
+byte bufferUIDStore[4];													//stores the incoming UID
+byte mastercard[4] = {135, 196, 119, 122};								//Hardcoded UID of PICC by which one can write data to the new PICC
+
+char uidStoreRoom[50][4];												//Stores all the UIDs read
+
 int idNumber = 1;
 
 // variables needed to read the data on PICC
@@ -36,28 +37,26 @@ byte blockNo = 1, length = 18;
 byte dataFromBlock1[18];
 byte dataFromBlock2[18];
 
-// variable to write data to PICC
-byte datatoblock1[18];
-byte datatoblock2[18];
+//variable for switch
+int swStatus;
 
 MFRC522::StatusCode status;
 
 void setup()
 {
-	lcd.init();
+	lcd.init();																			//lcd initialization
 	lcd.backlight();
 	lcd.setCursor(1, 0);
 	lcd.print("Tinkerers' Lab");
 	lcd.setCursor(2, 1);
 	lcd.print("ATLS System");
-	lcd.cursor_on();
-	lcd.blink_on();
-	Serial.begin(112500); // Initialize serial communications with the PC
+	delay(2000);
+	Serial.begin(112500);																// Initialize serial communications with the PC
 	SPI.begin();
-	mfrc522.PCD_Init(); // Init MFRC522
+	mfrc522.PCD_Init(); 																// Init MFRC522
 
-	//the defualt key is fffffffff. you can find this in the datasheet
-	for (byte i = 0; i < 6; i++)
+	// the defualt key is fffffffff. you can find this in the datasheet
+	for (byte i = 0; i < 6; i++)														//key used to accessed every sectors of the PICC
 	{
 		key.keyByte[i] = 0xFF;
 	}
@@ -65,13 +64,20 @@ void setup()
 
 void loop()
 {
-	//checks for new PICC
+	//checks for master access
+	if (pushButton == 0){
+		masterUIDAccess(bufferUIDStore[4], mastercard[], swStatus);
+	}
+
+	// checks for new PICC
 	if (!mfrc522.PICC_IsNewCardPresent())
 	{
+		lcd.setCursor(1, 0);
+		lcd.print("Scan your tag!");
 		return;
 	}
 
-	//reads the PICC if new card is found.
+	// reads the PICC if new card is found.
 	if (!mfrc522.PICC_ReadCardSerial())
 	{
 		return;
@@ -81,7 +87,7 @@ void loop()
 	delay(500);
 	Serial.print("ID: ");
 
-	//prints the UID of PICC
+	// prints the UID of PICC
 	for (int i = 0; i < mfrc522.uid.size; i++)
 	{
 		bufferUIDStore[i] = mfrc522.uid.uidByte[i];
@@ -91,13 +97,9 @@ void loop()
 
 	Serial.print("\n");
 
-	// writeDataPICCFN(blockNo, datatoblock1);
-	delay(100);
-	// writeDataPICCMN(blockNo, datatoblock2);
-
 	readFromBlock1(blockNo, dataFromBlock1);
 	//  print data to the serial monitor
-	
+
 	Serial.print("Name: ");
 	for (int i = 0; i < 16; i++)
 	{
@@ -105,14 +107,16 @@ void loop()
 	}
 	Serial.print(" ");
 
-	//readFromBlock2(blockNo, dataFromBlock2);
-	// print data to the serial monitor
+	// readFromBlock2(blockNo, dataFromBlock2);
+	//  print data to the serial monitor
 	/*
 	for (int i = 0; i < 16; i++)
 	{
 		Serial.write(dataFromBlock2[i]);
 	}
 	*/
+
+	delay(5000);
 
 	mfrc522.PICC_HaltA();
 	mfrc522.PCD_StopCrypto1();
@@ -242,7 +246,6 @@ void writeDataPICCMN(int block, byte writeBuffer[])
 	Serial.printf("%c", writeBuffer[4]);
 	Serial.printf("%c\n", writeBuffer[5]);
 	*/
-
 
 	// authenticate with KeyA before proceeding to write the data
 	status = mfrc522.PCD_Authenticate(MFRC522::PICC_CMD_MF_AUTH_KEY_A, Block, &key, &(mfrc522.uid));

@@ -127,3 +127,11 @@ I did not have my laptop today so was not able to continue from I left off yeste
 
 ---
 
+# Day15 of coding challenge
+
+**Date:** 14 Nov 2022
+
+Back again, playing with RFID. I'm trying to optimise my code, trying to use less variables, and structure the whole code properly by using functions wherever neccessary!
+
+---
+

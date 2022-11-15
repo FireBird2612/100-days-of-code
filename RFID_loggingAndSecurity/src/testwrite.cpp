@@ -1,4 +1,4 @@
-
+/*
 #include <Arduino.h>
 #include <SPI.h>
 #include <MFRC522.h>
@@ -91,16 +91,20 @@ void ReadDataFromBlock(int blockNum, byte readBlockData[])
         Serial.println("Authentication success");
     }
 
+*/
+/*
     /* Reading data from the Block */
+/*
     status = mfrc522.MIFARE_Read(blockNum, readBlockData, &length);
     if (status != MFRC522::STATUS_OK)
-    {
-        Serial.print("Reading failed: ");
-        Serial.println(mfrc522.GetStatusCodeName(status));
-        return;
-    }
-    else
-    {
-        Serial.println("Block was read successfully");
-    }
+{
+    Serial.print("Reading failed: ");
+    Serial.println(mfrc522.GetStatusCodeName(status));
+    return;
 }
+else
+{
+    Serial.println("Block was read successfully");
+}
+}
+*/
