@@ -135,3 +135,26 @@ Back again, playing with RFID. I'm trying to optimise my code, trying to use les
 
 ---
 
+# Day16 of coding challenge 
+
+**Date:** 15 Nov 2023
+
+Almost there! Will be figuring out the server part tomorrow. 
+
+---
+
+# Day17 of coding challenge
+
+**Date:** 16th Nov 2023
+
+So many logic errors, spend most of time solving those errors. learning more about using debuggng in VS Code, PlatformIO
+
+---
+
+# Day18 of coding challenge 
+
+**Date:** 17th Nov 2023
+
+I'm trying to figure out how can i remove the blinking effect on the lcd that say's "Scan your tag". I want it to be static but since it is in the loop, it acts like its blinking very rapidly.
+
+---
