@@ -158,3 +158,12 @@ So many logic errors, spend most of time solving those errors. learning more abo
 I'm trying to figure out how can i remove the blinking effect on the lcd that say's "Scan your tag". I want it to be static but since it is in the loop, it acts like its blinking very rapidly.
 
 ---
+
+# Day19 of coding challenge
+
+**Date:** 18 Nov 2023
+
+Today, I connected the Reed Switch with ESP8266, the plan was to get the alert notification on Telegram by a bot which I had to configure.
+I was not able to completely get 100% result. but I do feel like with this type of project I now know much more about HTTP protocol. Also, played around with two more library, that i never knew about. 
+
+---
