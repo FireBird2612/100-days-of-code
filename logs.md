@@ -137,7 +137,7 @@ Back again, playing with RFID. I'm trying to optimise my code, trying to use les
 
 # Day16 of coding challenge 
 
-**Date:** 15 Nov 2023
+**Date:** 15 Nov 2022
 
 Almost there! Will be figuring out the server part tomorrow. 
 
@@ -145,7 +145,7 @@ Almost there! Will be figuring out the server part tomorrow.
 
 # Day17 of coding challenge
 
-**Date:** 16th Nov 2023
+**Date:** 16th Nov 2022
 
 So many logic errors, spend most of time solving those errors. learning more about using debuggng in VS Code, PlatformIO
 
@@ -153,7 +153,7 @@ So many logic errors, spend most of time solving those errors. learning more abo
 
 # Day18 of coding challenge 
 
-**Date:** 17th Nov 2023
+**Date:** 17th Nov 2022
 
 I'm trying to figure out how can i remove the blinking effect on the lcd that say's "Scan your tag". I want it to be static but since it is in the loop, it acts like its blinking very rapidly.
 
@@ -161,9 +161,31 @@ I'm trying to figure out how can i remove the blinking effect on the lcd that sa
 
 # Day19 of coding challenge
 
-**Date:** 18 Nov 2023
+**Date:** 18 Nov 2022
 
 Today, I connected the Reed Switch with ESP8266, the plan was to get the alert notification on Telegram by a bot which I had to configure.
 I was not able to completely get 100% result. but I do feel like with this type of project I now know much more about HTTP protocol. Also, played around with two more library, that i never knew about. 
+
+---
+
+# Day20 of coding challenge
+
+**Date:** 19 Nov 2022
+
+Didnt do much today, just setting up the menu on lcd display which also has few bugs that needs to be sorted after which I might be able to wrap the RFID project and move on to different one but lately I tend to procrastinate on the RFID project and focus on learning IoT protocols.
+
+---
+
+# Day21 of coding challenge
+
+**Date:** 20 Nov 2022
+
+Built a simple web server with ESP8266, again getting myself familiarised with the ESP8266WiFi library.
+
+I was able to control an LED with the web server after which I decided to connect the relay, might as well try connecting an AC load.
+
+This may seem very easy and of course, it is but I get to learn a lot of things by just doing it and building on top of it like how the relay works, the logic that goes behind a function, reading and understanding the library, the networking protocol, and programming.
+
+Just knowing the syntax of any language won't get you anywhere but practicing the language is the way to go.
 
 ---
