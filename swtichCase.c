@@ -25,6 +25,7 @@ void calculate_Area_Rect();
 
 int main()
 {
+    // Store the input from user.
     char usrIp;
     const char tri = 't', trap = 'z', cir = 'c', sq = 's', rect = 'r';
 
