@@ -189,3 +189,21 @@ This may seem very easy and of course, it is but I get to learn a lot of things 
 Just knowing the syntax of any language won't get you anywhere but practicing the language is the way to go.
 
 ---
+
+# Day22 of coding challenge
+
+**Date:** 21 Nov 2022
+
+Solved few problems on C programming from G2G.
+
+I will be working on my C language from now on, solving as many problems as I can!
+
+---
+
+# Day23 of coding challenge
+
+**Date:** 22 Nov 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
