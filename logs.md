@@ -207,3 +207,251 @@ I will be working on my C language from now on, solving as many problems as I ca
 Day 2 of understanding, implementing and solving...
 
 ---
+
+# Day24 of coding challenge
+
+**Date:** 25 Nov 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day25 of coding challenge
+
+**Date:** 26 Nov 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day26 of coding challenge
+
+**Date:** 27 Nov 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day27 of coding challenge
+
+**Date:** 28 Nov 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day28 of coding challenge
+
+**Date:** 29 Nov 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day29 of coding challenge
+
+**Date:** 30 Nov 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day30 of coding challenge
+
+**Date:** 1 Dec 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day31 of coding challenge
+
+**Date:** 2 Dec 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day32 of coding challenge
+
+**Date:** 3 Dec 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day33 of coding challenge
+
+**Date:** 4 Dec 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day34 of coding challenge
+
+**Date:** 5 Dec 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day35 of coding challenge
+
+**Date:** 6 Dec 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day36 of coding challenge
+
+**Date:** 7 Dec 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day37 of coding challenge
+
+**Date:** 8 Dec 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day38 of coding challenge
+
+**Date:** 9 Dec 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day39 of coding challenge
+
+**Date:** 10 Dec 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day40 of coding challenge
+
+**Date:** 11 Dec 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day41 of coding challenge
+
+**Date:** 12 Dec 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day42 of coding challenge
+
+**Date:** 13 Dec 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day43 of coding challenge
+
+**Date:** 14 Dec 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day44 of coding challenge
+
+**Date:** 15 Dec 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day45 of coding challenge
+
+**Date:** 16 Dec 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day46 of coding challenge
+
+**Date:** 17 Dec 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day47 of coding challenge
+
+**Date:** 18 Dec 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day48 of coding challenge
+
+**Date:** 19 Dec 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day49 of coding challenge
+
+**Date:** 20 Dec Nov 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day50 of coding challenge
+
+**Date:** 21 Dec 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day51 of coding challenge
+
+**Date:** 22 Dec 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day52 of coding challenge
+
+**Date:** 23 Dec 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day53 of coding challenge
+
+**Date:** 24 Dec 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
+
+# Day54 of coding challenge
+
+**Date:** 25 Dec 2022
+
+Day 2 of understanding, implementing and solving...
+
+---
